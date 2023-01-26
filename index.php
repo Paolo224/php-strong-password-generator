@@ -1,12 +1,13 @@
 <?php
-$arg2 = 0;
 
-function getRandomPassword($arg1)
+function getRandomPassword($lunghezza)
 {
-    for ($i = 0; $i < $arg1; $i++) {
-        // $arg2 .= chr(64 + rand(1, 26));
+    $caratteri = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789.!?,;:#*';
+    $counter = '';
+    for ($i = 0; $i < $lunghezza; $i++) {
+        $counter .= $caratteri[rand(0, strlen($caratteri) - 1)];
     }
-    // return $arg2;
+    return $counter;
 }
 ?>
 <!DOCTYPE html>
